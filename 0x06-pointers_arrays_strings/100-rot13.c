@@ -1,28 +1,32 @@
 #include "holberton.h"
-#include <stdlib.h>
-
 /**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
+ *rot13 - encodes a string using rot13
+ *@s:char
+ *Return: char*
  */
-int main(void)
+
+char *rot13(char *s)
 {
-print_number(3);
-_putchar('\n');
-print_number(-1);
-_putchar('\n');
-print_number(10);
-_putchar('\n');
-print_number(1024);
-_putchar('\n');
-print_number(-99);
-_putchar('\n');
-print_number(2147483647);
-_putchar('\n');
-print_number(-2147483648);
-_putchar('\n');
 
+char *t = s;
+char *in = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char *out = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+int x;
 
-return (0);
+while (*t)
+{
+for (x = 0; *(in + x) != '\0' ; x++)
+{
+if (*t == *(in + x))
+{
+*t = *(out + x);
+break;
+
+}
+
+}
+t++;
+}
+
+return (s);
 }
