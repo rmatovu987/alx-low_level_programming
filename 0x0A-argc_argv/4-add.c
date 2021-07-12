@@ -4,40 +4,39 @@
 #include <string.h>
 
 /**
- * main -add positive numbers
- * @argc: int
- * @argv: char *
- * Return: always 0
+ * main - adds two positive number
+ * @argc: number of arguments
+ * @argv: array of arguents
+ *
+ * Return: 0 (Success), or 1 (Success)
  */
-
 int main(int argc, char *argv[])
 {
-int i,j;
-int sum = 0;
+int sum, num, i, j, k;
 
-if (argc > 1)
-{
-for (i = 1; i <= (argc - 1); i++)
-{
+sum = 0;
 
-for (j = 1; argv[i][j] != '\0'; j++)
+for (i = 1; i < argc; i++)
+{
+for (j = 0; argv[i][j] != '\0'; j++)
 {
 if (argv[i][j] > '9' || argv[i][j] < '0')
 {
-printf("Error\n");
+puts("Error");
 return (1);
 }
 }
-
-sum = sum + atoi(argv[i]);
-
 }
+
+for (k = 1; k < argc; k++)
+{
+num = _atoi(argv[k]);
+if (num >= 0)
+{
+sum += num;
+}
+}
+
 printf("%d\n", sum);
-}
-
-if (argc == 1)
-printf("0\n");
-
 return (0);
-
 }
