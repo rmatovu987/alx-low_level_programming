@@ -20,7 +20,7 @@ if (argc > 1)
 for (i = 1; i <= (argc - 1); i++)
 {
 
-for (j = 1; argv[i][j] != '\0'; j++)
+for (j = 0; argv[i][j] != '\0'; j++)
 {
 if (argv[i][j] > '9' || argv[i][j] < '0')
 {
