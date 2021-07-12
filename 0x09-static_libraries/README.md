@@ -18,5 +18,3 @@ What you should learn from this project:
 
 ---
 
-## Author
-* **Diva Lei** - [lei-diva](https://github.com/lei-diva)
