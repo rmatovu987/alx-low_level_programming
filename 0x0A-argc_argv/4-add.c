@@ -4,17 +4,16 @@
 #include <string.h>
 
 /**
- * main - adds two positive number
- * @argc: number of arguments
- * @argv: array of arguents
- *
- * Return: 0 (Success), or 1 (Success)
+ * main -add positive numbers
+ * @argc: int
+ * @argv: char *
+ * Return: always 0
  */
+
 int main(int argc, char *argv[])
 {
-int sum, num, i, j, k;
-
-sum = 0;
+int i, j;
+int sum = 0;
 
 for (i = 1; i < argc; i++)
 {
@@ -22,21 +21,26 @@ for (j = 0; argv[i][j] != '\0'; j++)
 {
 if (argv[i][j] > '9' || argv[i][j] < '0')
 {
-puts("Error");
+printf("%s\n", Error);
 return (1);
 }
 }
 }
 
-for (k = 1; k < argc; k++)
+
+if (argc > 1)
 {
-num = _atoi(argv[k]);
-if (num >= 0)
+for (i = 1; i <= (argc - 1); i++)
 {
-sum += num;
+sum = sum + atoi(argv[i]);
+
 }
+printf("%d\n", sum);
 }
 
-printf("%d\n", sum);
+if (argc == 1)
+printf("0\n");
+
 return (0);
+
 }
