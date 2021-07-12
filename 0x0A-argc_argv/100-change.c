@@ -1,44 +1,39 @@
+
 #include <stdio.h>
 #include <stdlib.h>
-#include "holberton.h"
 
 /**
- * main - prints the minimum number of coins to
- * make change for an amount of money
- * @argc: number of arguments
- * @argv: array of arguments
- *
- * Return: 0 (Success), 1 (Error)
+ * main - function to print out the change that needs to given
+ * @argc: number of arguments to be passed
+ * @argv: number of variables to calculate
+ * Return: always 0 for sucess
  */
-int main(int argc, char *argv[])
-{
-int num, j, result;
-int coins[] = {25, 10, 5, 2, 1};
 
-if (argc != 2)
+int main(int argc, char **argv)
+{
+int total, change;
+
+if (argc < 2)
 {
 printf("Error\n");
 return (1);
 }
 
-num = atoi(argv[1]);
-result = 0;
+change = atoi(argv[1]);
 
-if (num < 0)
+for (total = 0; change > 0; total++)
 {
-printf("0\n");
-return (0);
+if (change - 25 >= 0)
+change = change - 25;
+else if (change - 10 >= 0)
+change = change - 10;
+else if (change - 5 >= 0)
+change = change - 5;
+else if (change - 2 >= 0)
+change = change - 2;
+else if (change - 1 >= 0)
+change = change - 1;
 }
-
-for (j = 0; j < 5 && num >= 0; j++)
-{
-while (num >= coins[j])
-{
-result++;
-num -= coins[j];
-}
-}
-
-printf("%d\n", result);
+printf("%d\n", total);
 return (0);
 }
