@@ -8,7 +8,6 @@ char **strtow(char *str)
 {
 char **ar;
 int i, j, wordcount = 0, word = 0, wordlength = 0, letter, y;
-
 if (str == NULL || str[0] == '\0')
 return (NULL);
 for (i = 0; str[i] != '\0'; i++)
@@ -36,16 +35,14 @@ if (ar[word] == NULL)
 for (y = 0; y < word; y++)
 free(ar[word]);
 free(ar);
-return (NULL);	}
+return (NULL);}
 for (letter = 0; letter < wordlength; letter++, i++)
 {
 ar[word][letter] = str[i];	
 }
 ar[word][letter] = '\0';
 word++;
-}
-
-}
+}}
 ar[word] = NULL;
-return (ar); 
+return (ar);
 }
