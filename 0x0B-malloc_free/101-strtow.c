@@ -35,10 +35,10 @@ if (ar[word] == NULL)
 for (y = 0; y < word; y++)
 free(ar[word]);
 free(ar);
-return (NULL);}
+return (NULL); }
 for (letter = 0; letter < wordlength; letter++, i++)
 {
-ar[word][letter] = str[i];	
+ar[word][letter] = str[i];
 }
 ar[word][letter] = '\0';
 word++;
