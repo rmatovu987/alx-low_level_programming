@@ -13,7 +13,7 @@ if (argc == 3)
 {
 x1 = atoi(argv[1]);
 x2 = atoi(argv[2]);
-printf("%d\n", x1 * x2);
+printf("%d\n", x1 *x2);
 }
 else
 printf("Error\n");
