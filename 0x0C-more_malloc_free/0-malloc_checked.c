@@ -8,9 +8,9 @@ void *malloc_checked(unsigned int b)
 {
 void *ar;
 
-ar=malloc(b);
+ar = malloc(b);
 
-if(ar == null)
+if (ar == null)
 {
 free(ar);
 exit(98);
