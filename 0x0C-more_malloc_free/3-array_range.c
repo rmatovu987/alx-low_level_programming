@@ -1,12 +1,12 @@
-#include <stdlib.h>
 #include "holberton.h"
 
 /**
- * array_range - creates an array of integers
- * @min: starting int
- * @max: max int
- * Return: array of integers
+ *array_range - create array of integers
+ *@min:int
+ *@max:int
+ * Return: int
  */
+
 int *array_range(int min, int max)
 {
 int *ar;
@@ -26,4 +26,5 @@ for (i = 0, x = min; x <= max; x++, i++)
 	ar[i] = x;
 
 return (ar);
+
 }
