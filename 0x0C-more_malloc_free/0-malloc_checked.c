@@ -1,20 +1,18 @@
-#include "holberton.h"
+#include <stdlib.h>
+
+
 /**
- * malloc_checked - allocates memory using malloc
- *@b: unsigned int
- *Return: void pointer
+ * *malloc_checked - allocates memory using malloc and exit if failed
+ * @b: int
+ * Return: pointer to the array initialized or NULL
  */
+
 void *malloc_checked(unsigned int b)
 {
-void *ar;
+	int *m = malloc(b);
 
-ar = malloc(b);
+	if (m == 0)
+		exit(98);
 
-if (ar == null)
-{
-free(ar);
-exit(98);
-}
-
-return (ar);
+	return (m);
 }
