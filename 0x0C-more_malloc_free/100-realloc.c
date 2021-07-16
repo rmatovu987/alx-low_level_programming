@@ -1,54 +1,40 @@
 #include "holberton.h"
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-
 /**
- * simple_print_buffer - prints buffer in hexa
- * @buffer: the address of memory to print
- * @size: the size of the memory to print
+ * *_realloc - allocates a memory block using malloc and free.
+ * @ptr: pointer to memory allocated with malloc(old_size).
+ * @old_size: size in bytes, of the allocated space for ptr
+ * @new_size: size in bytes of the new memory block.
  *
- * Return: Nothing.
+ * Return: NULL if new_size = 0 and ptr is not NULL.
  */
-void simple_print_buffer(char *buffer, unsigned int size)
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
+	void *p;
 	unsigned int i;
 
-	i = 0;
-	while (i < size)
+	if (new_size == old_size)
+		return (ptr);
+	if (new_size == 0 && ptr != NULL)
 	{
-		if (i % 10)
-		{
-			printf(" ");
-		}
-		if (!(i % 10) && i)
-		{
-			printf("\n");
-		}
-		printf("0x%02x", buffer[i]);
-		i++;
+		free(ptr);
+		return (NULL);
 	}
-	printf("\n");
-}
-
-/**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
- */
-int main(void)
-{
-	char *p;
-	int i;
-
-	p = malloc(sizeof(char) * 10);
-	p = _realloc(p, sizeof(char) * 10, sizeof(char) * 98);
-	i = 0;
-	while (i < 98)
+	if (ptr == NULL)
 	{
-		p[i++] = 98;
+		p = malloc(new_size);
+		if (p == NULL)
+			return (NULL);
+		return (p);
 	}
-	simple_print_buffer(p, 98);
-	free(p);
-	return (0);
+	if (new_size > old_size)
+	{
+		p = malloc(new_size);
+		if (p == NULL)
+			return (NULL);
+		for (i = 0; i < old_size && i < new_size; i++)
+			*((char *)p + i) = *((char *)ptr + i);
+		free(ptr);
+	}
+	return (p);
 }
