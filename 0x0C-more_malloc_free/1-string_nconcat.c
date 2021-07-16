@@ -19,7 +19,7 @@ len1++;
 while (s2 && s2[len2])
 len2++;
 
-s = malloc(((len1 +n)*sizeof(*s)) + 1);
+s = malloc(((len1 + n) * sizeof(*s)) + 1);
 
 if (!s)
 return (NULL);
