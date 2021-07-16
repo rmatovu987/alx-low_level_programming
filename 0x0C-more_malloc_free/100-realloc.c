@@ -1,39 +1,59 @@
-#include "holberton.h"
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-/**
- * *_realloc - reallocate memory size function
- * @ptr: pointer to address of old memory location
- * @old_size: unsigned int type of old memory size
- * @new_size: unsigned int type for new memory size
- * Return:  return pointer to array
- */
 
+/**
+ * _memcpy - Copy n bytes from memory area src to memory area dest
+ * @dest: Memory area to copy to
+ * @src: Memory area to copy from
+ * @n: Amount to copy from memory area
+ *
+ * Return: Pointer to area
+ */
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+	unsigned int i;
+
+	i = 0;
+	while (i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	return (dest);
+}
+
+/**
+ * _realloc - Reallocate a memory block using malloc
+ * @ptr: Old memory block
+ * @old_size: Size of of old memory block
+ * @new_size: Size the new memory block should be
+ *
+ * Return: Pointer to new memory space, NULL if it fails
+ */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	char *s;
+	void *nptr;
+	unsigned int min;
 
-	if (new_size > old_size)
-	{
-		s = malloc(new_size);
-		free(ptr);
-		return (s);
-	}
-	if (new_size == old_size)
-	{
-		return (ptr);
-	}
 	if (ptr == NULL)
 	{
-		s = malloc(new_size);
-		free(ptr);
-		return (s);
+		nptr = malloc(new_size);
+		return (nptr);
 	}
-	if (new_size == 0 && ptr != NULL)
+	if (ptr != NULL && new_size == 0)
 	{
 		free(ptr);
 		return (NULL);
 	}
-	return (ptr);
+	if (new_size == old_size)
+		return (ptr);
+	if (new_size < old_size)
+		min = new_size;
+	else
+		min = old_size;
+	nptr = malloc(new_size);
+	if (nptr == NULL)
+		return (NULL);
+	nptr = _memcpy(nptr, ptr, min);
+	free(ptr);
+	return (nptr);
 }
