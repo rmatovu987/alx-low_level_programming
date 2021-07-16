@@ -1,47 +1,40 @@
 #include "holberton.h"
-#include <stdlib.h>
 
 /**
- * *_realloc - allocates a new memory space/ extends it
- * @ptr: the pointer for the memory address
- * @old_size: the old address
- * @new_size: the new allocated size/ address
+ * _realloc - will reallocate space in memory
+ * @ptr: memory to be reallocated
+ * @old_size: size in bytes of original memory
+ * @new_size: size in bytes to be allocated
  *
- *Return: NULL or pointer
+ * Return: pointer to allocated space on success, NULL on failure,
+ * ptr on no change
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	char *nptr;
+	void *res;
+	char *accessin, *accessout;
 	unsigned int i;
 
-	if (new_size == old_size)
-		return (ptr);
-	if (ptr == NULL)
-	{
-		nptr = malloc(new_size);
-		if (nptr == NULL)
-		{
-			free(nptr);
-			return (NULL);
-		}
-		return (nptr);
-	}
-	if (new_size == 0 && ptr != NULL)
+	if (!new_size && ptr)
 	{
 		free(ptr);
 		return (NULL);
 	}
+	if (new_size == old_size)
+		return (ptr);
 
-	nptr = malloc(new_size);
-	if (nptr == NULL)
-	{
-		free(nptr);
+	res = malloc(new_size);
+	if (!res)
 		return (NULL);
+	accessin = ptr;
+	accessout = res;
+
+	if (ptr)
+	{
+		for (i = 0; i < old_size && i < new_size; i++)
+			*(accessout + i) = *(accessin + i);
+		free(ptr);
 	}
 
-	for (i = 0; i < old_size; i++)
-		nptr[i] = *((char *)ptr + i);
-
-	free(ptr);
-	return (nptr);
+	return (res);
 }
