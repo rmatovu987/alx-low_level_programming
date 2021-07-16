@@ -18,10 +18,12 @@ while (s1 && s1[len1])
 len1++;
 while (s2 && s2[len2])
 len2++;
-if (n < len2)
-s = malloc(len1 + n + 1);
-else
-s = malloc(len1 + len2 + 1);
+// if (n < len2)
+// s = malloc(len1 + n + 1);
+// else
+// s = malloc(len1 + len2 + 1);
+
+s = malloc(((len1 +n)*sizeof(*s)) + 1)
 
 if (!s)
 return (NULL);
