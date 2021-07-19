@@ -27,6 +27,22 @@ for (nl = 0; name[nl] != '\0'; nl++)
 ;
 for (ol = 0; owner[ol] != '\0'; ol++)
 ;
+(*doginfo).name = malloc((sizeof(char) * nl) + 1);
+if ((*doginfo).name == NULL)
+{
+	free((*doginfo).name);
+	free(doginfo);
+	return (NULL);
+}
+(*doginfo).owner = malloc((sizeof(char) * ol) + 1);
+
+if ((*doginfo).owner == NULL)
+{
+	free((*doginfo).name);
+	free((*doginfo).owner);
+	free(doginfo);
+	return (NULL);
+}
 
 for (x = 0; x <= nl; x++)
 (*doginfo).name[x] = name[x];
