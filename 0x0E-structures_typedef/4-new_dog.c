@@ -20,7 +20,7 @@ doginfo = (dog_t *)malloc(sizeof(dog_t));
 if (doginfo == null)
 return (NULL);
 
-int nl, ol;
+int nl, ol, x;
 for (nl = 0; name[nl] != '\0'; nl++)
 ;
 for (ol = 0; owner[ol] != '\0'; ol++)
