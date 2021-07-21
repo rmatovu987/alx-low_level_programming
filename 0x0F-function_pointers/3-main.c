@@ -16,16 +16,10 @@ if (argc - 1 > 3 || argc - 1 < 3)
 printf("Error\n");
 exit(98);
 }
-if ((strcmp(argv[2], "+") == 0) || (strcmp(argv[2], "-") == 0) ||
-(strcmp(argv[2], "*") == 0) ||
-(strcmp(argv[2], "/") == 0) ||
-(strcmp(argv[2], "%") == 0))
-{
-
-}
-
-else
-
+if ((strcmp(argv[2], "+") != 0) || (strcmp(argv[2], "-") != 0) ||
+(strcmp(argv[2], "*") != 0) ||
+(strcmp(argv[2], "/") != 0) ||
+(strcmp(argv[2], "%") != 0))
 {
 printf("Error\n");
 exit(99);
