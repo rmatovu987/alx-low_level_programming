@@ -4,7 +4,7 @@
 *array_iterator - point of entry
 *@array: array to iterate
 *@size: size of array
-*@action:pointer to the function 
+*@action:pointer to the function
 *Return: void
 */
 
