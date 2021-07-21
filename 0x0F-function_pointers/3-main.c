@@ -20,8 +20,8 @@ int main(int argc, char *argv[])
 			(strcmp(argv[2], "*") == 0) ||
 			(strcmp(argv[2], "/") == 0) ||
 			(strcmp(argv[2], "%") == 0))
-    { 
-        
+    {
+
     }
     else
 	{
