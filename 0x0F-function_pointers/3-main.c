@@ -16,10 +16,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	if ((strcmp(argv[2], "+") == -1) || (strcmp(argv[2], "-") == -1) ||
-			(strcmp(argv[2], "*") == -1) ||
-			(strcmp(argv[2], "/") == -1) ||
-			(strcmp(argv[2], "%") == -1))
+	if (!get_op_func(argv[2]))
 	{
 		printf("Error\n");
 		exit(99);
