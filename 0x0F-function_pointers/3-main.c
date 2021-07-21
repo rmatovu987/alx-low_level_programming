@@ -14,7 +14,10 @@ if (argc != 4)
 printf("Error\n");
 exit(98);
 }
-if (get_op_func(argv[2]) == NULL)
+if ((strcmp(argv[2], "+") != 0) || (strcmp(argv[2], "-") != 0) ||
+(strcmp(argv[2], "*") != 0) ||
+(strcmp(argv[2], "/") != 0) ||
+(strcmp(argv[2], "%") != 0))
 {
 printf("Error\n");
 exit(99);
