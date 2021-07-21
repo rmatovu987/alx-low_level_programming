@@ -23,17 +23,21 @@ if ((strcmp(argv[2], "+") == 0) || (strcmp(argv[2], "-") == 0) ||
 {
 
 }
+
 else
+
 {
 printf("Error\n");
 exit(99);
 }
+
 if ((strcmp(argv[2], "/") == 0 || (strcmp(argv[2], "%") == 0)) &&
 atoi(argv[3]) == 0)
 {
 printf("Error\n");
 exit(100);
 }
+
 val = get_op_func(argv[2])(atoi(argv[1]), atoi(argv[3]));
 printf("%d\n", val);
 return (0);
