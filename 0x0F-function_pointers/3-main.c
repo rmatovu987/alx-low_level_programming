@@ -14,7 +14,9 @@ if (argc != 4)
 printf("Error\n");
 exit(98);
 }
-if (get_op_func(argv[2]) == NULL)
+func = get_op_func(argv[2]);
+
+if (func == NULL)
 {
 printf("Error\n");
 exit(99);
@@ -26,7 +28,7 @@ atoi(argv[3]) == 0)
 printf("Error\n");
 exit(100);
 }
-val = get_op_func(argv[2])(atoi(argv[1]), atoi(argv[3]));
+val = func(atoi(argv[1]), atoi(argv[3]));
 printf("%d\n", val);
 return (0);
 }
