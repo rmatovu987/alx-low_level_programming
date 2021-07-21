@@ -15,7 +15,7 @@ printf("Error\n");
 exit(98);
 }
 if ((strcmp(argv[2], "+") == -1) || (strcmp(argv[2], "-") == -1) ||
-(strcmp(argv[2], "*") == -1) || (strcmp(argv[2], "/") == -1) || 
+(strcmp(argv[2], "*") == -1) || (strcmp(argv[2], "/") == -1) ||
 (strcmp(argv[2], "%") == -1))
 {
 printf("Error\n");
