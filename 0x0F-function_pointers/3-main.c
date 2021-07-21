@@ -11,19 +11,19 @@ int val;
 
 if (argc - 1 > 3 || argc - 1 < 3)
 {
-printf("Error98\n");
+printf("Error\n");
 exit(98);
 }
 if (get_op_func(argv[2]) == NULL)
 {
-printf("Error99\n");
+printf("Error\n");
 exit(99);
 }
 
 if ((strcmp(argv[2], "/") == 0 || (strcmp(argv[2], "%") == 0)) &&
 atoi(argv[3]) == 0)
 {
-printf("Error100\n");
+printf("Error\n");
 exit(100);
 }
 val = get_op_func(argv[2])(atoi(argv[1]), atoi(argv[3]));
