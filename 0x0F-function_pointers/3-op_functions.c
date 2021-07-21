@@ -12,7 +12,7 @@ return (a + b);
 }
 
 /**
-*op_add-function that subtracts
+*op_sub-function that subtracts
 *@a: integer
 *@b: integer
 *Return: int
@@ -23,7 +23,7 @@ return (a - b);
 }
 
 /**
-*op_add-function that multiplies
+*op_mul-function that multiplies
 *@a: integer
 *@b: integer
 *Return: int
@@ -34,7 +34,7 @@ return (a * b);
 }
 
 /**
-*op_add-function that divides
+*op_div-function that divides
 *@a: integer
 *@b: integer
 *Return: int
@@ -45,7 +45,7 @@ return (a / b);
 }
 
 /**
-*op_add-function that adds
+*op_mod-function that adds
 *@a: integer
 *@b: integer
 *Return: int
