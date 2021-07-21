@@ -20,11 +20,10 @@ if (get_op_func(argv[2]) == NULL)
 printf("Error\n");
 exit(99);
 
-if ((*argv[2] == '%' || *argv[2] == '/') && num2 == 0)
-{
-printf("Error'\n");
+if ((strcmp(argv[2], "/") == 0 || (strcmp(argv[2], "%") == 0)) &&
+atoi(argv[3]) == 0)
+printf("Error\n");
 exit(100);
-}
 
 printf("%d\n", (get_op_func(argv[2])(num1, num2)));
 return (0);
