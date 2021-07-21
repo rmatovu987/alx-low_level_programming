@@ -22,7 +22,7 @@ i = 0;
 
 while (ops[i].op)
 {
-if (strcmp(ops[i].op, s) == 0)
+if (*s == *ops[i].op)
 return (ops[i].f);
 
 i++;
