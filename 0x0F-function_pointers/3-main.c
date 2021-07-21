@@ -5,11 +5,11 @@
  *@argv:arguments in command line
  *Return:int
  */
-int main(int argc, char *argv[]) 
+int main(int argc, char *argv[])
 {
   int val;
 
-  if (argc != 4) 
+  if (argc != 4)
   {
     printf("Error\n");
     exit(98);
@@ -17,14 +17,14 @@ int main(int argc, char *argv[])
 
   func = get_op_func(argv[2]);
 
-  if (func == NULL) 
+  if (func == NULL)
   {
     printf("Error\n");
     exit(99);
   }
 
   if ((strcmp(argv[2], "/") == 0 || (strcmp(argv[2], "%") == 0)) &&
-      atoi(argv[3]) == 0) 
+      atoi(argv[3]) == 0)
       {
     printf("Error\n");
     exit(100);
