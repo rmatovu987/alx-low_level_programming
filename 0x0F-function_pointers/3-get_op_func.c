@@ -1,5 +1,4 @@
 #include "3-calc.h"
-#include <stdio.h>
 
 /**
  *get_op_func-selects operation
@@ -21,9 +20,9 @@ op_t ops[] = {
 int i;
 i = 0;
 
-while (i < 5)
+while (ops[i].op)
 {
-if (*s == *ops[i].op)
+if (strcmp(ops[i].op, s) == 0)
 return (ops[i].f);
 
 i++;
