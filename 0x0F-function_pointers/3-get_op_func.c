@@ -24,7 +24,7 @@ i = 0;
 
 while (i < 5)
 {
-if ((*s == *ops[i].op) && !(*(s + 1))
+if ((*s == *ops[i].op) && !(*(s + 1)))
 return (ops[i].f);
 
 i++;
