@@ -15,12 +15,16 @@ va_start(ap, n);
 for (i = 0; i < n; i++)
 s = va_arg(ap, char *);
 if (!s)
-s = "(nil)";
+{
+printf("nill");
+}
+else
+{
 if (!separator || (separator && i == 0))
 printf("%s", s);
 else
 printf("%s%s", separator, s);
-
+}
 va_end(ap);
 printf("\n");
 }
