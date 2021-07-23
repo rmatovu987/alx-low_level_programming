@@ -12,18 +12,15 @@ char *s;
 va_list ap;
 
 va_start(ap, n);
-for (i = 0; i < n; i++)
+for (i = 0; i < n ; i++)
+{
 s = va_arg(ap, char *);
-if (!s)
-{
-printf("nill");
-}
+if (s == NULL)
+printf("(nil)");
 else
-{
-if (!separator || (separator && i == 0))
 printf("%s", s);
-else
-printf("%s%s", separator, s);
+if (i < n - 1 && separator)
+printf("%s", separator);
 }
 va_end(ap);
 printf("\n");
