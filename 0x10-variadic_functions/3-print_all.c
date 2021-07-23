@@ -38,7 +38,7 @@ void print_all(const char * const format, ...)
 					i++;
 					continue;
 			}
-      printf(", ");
+			sep = ", ";
 			i++;
 		}
 	}
