@@ -8,4 +8,3 @@ file.
 
 File 3-cp.c is a program that copies the content of a file to another file.
 
-File holberton.h is the header file that contains all these function prototypes.
