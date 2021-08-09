@@ -1,4 +1,4 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
  *read_textfile - function to read a text file
@@ -14,7 +14,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!filename)
 		return (0);
 
-	fd = open(filename, 0_RDONLY);
+	fd = open(filename, O_RDONLY);
 
 	if (fd < 0)
 	{
