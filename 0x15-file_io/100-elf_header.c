@@ -1,5 +1,7 @@
 #include "main.h"
 
+int strcmp(char a[], char *b);
+
 int main(int argc, char *argv[])
 {
 	char header[5];
@@ -18,11 +20,11 @@ int main(int argc, char *argv[])
 	}
 	if (strcmp(header, "^?ELF") == 0)
 	{
-		dprintf(STDERR_FILENO, "Error: File not ELF %s");
+		dprintf(STDERR_FILENO, "Error: File not ELF %s", argv[1]);
 		exit(98);
 	}
 
-
+	return (1);
 
 }
 
@@ -34,8 +36,10 @@ int strcmp(char a[], char *b)
 		if (*a != *b)
 			return (0);
 		else
+		{
 			a++;
 			b++;
+		}
 	}
 
 	return (1);
