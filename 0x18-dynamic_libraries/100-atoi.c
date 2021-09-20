@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdio.h>
 /**
  *_atoi - a to i
