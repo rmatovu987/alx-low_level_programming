@@ -1,4 +1,4 @@
-#include "main.h"
+#include "head.h"
 
 int add(int x, int y)
 {

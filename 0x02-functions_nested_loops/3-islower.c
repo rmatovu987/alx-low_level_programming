@@ -8,12 +8,12 @@
 
 int _islower(int c)
 {
-char alp;
-
-for (alp = 'a'; alp <= 'z'; alp++)
-{
-if (c == alp)
-return (1);
-}
-return (0);
+    char alp;
+    
+    for (alp = 'a'; alp <= 'z'; alp++)
+    {
+        if (c == alp)
+            return (1);
+    }
+    return (0);
 }

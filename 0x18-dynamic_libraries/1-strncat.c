@@ -1,4 +1,4 @@
-#include "main.h"
+#include "holberton.h"
 /**
  *_strncat- concats 2 strings using n
  *@dest: char
