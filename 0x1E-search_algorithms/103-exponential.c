@@ -67,14 +67,16 @@ int exponential_search(int *array, size_t size, int value)
 		else if (value < array[exp] || exp == (int)size - 1)
 		{
 
-			printf("Value found between indexes [%d] and [%d]\n", prev, exp);
+			printf("Value found between indexes [%d] and [%d]\n",
+			       prev, exp);
 			return (binary_help(array, prev, exp, value));
 		}
-
 		else
-			printf("Value checked array[%d] = [%d]\n", exp, array[exp]);
+		{
+			printf("Value checked array[%d] = [%d]\n",
+			       exp, array[exp]);
 			prev = exp;
-
+		}
 	}
 	return (-1);
 }
